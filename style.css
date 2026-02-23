@@ -1,232 +1,142 @@
+/* ========== GLOBAL ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: #000;
-    color: white;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* =======================
-   Animated Gradient Background
-======================= */
-
-.bg-animation {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #000000, #111111, #1a1a1a, #000000);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-    z-index: -3;
+section {
+  padding: 100px 20px;
+  text-align: center;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* =======================
-   Floating Particles
-======================= */
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #ff0066;
-    border-radius: 50%;
-    bottom: -10px;
-    animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-    to {
-        transform: translateY(-110vh);
-    }
-}
-
-/* =======================
-   HERO SECTION
-======================= */
-
+/* ========== HERO SECTION ========== */
 .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: -1;
+/* Glowing Avatar */
+.glow-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #000;
+  border: 4px solid #ff006a;
+  box-shadow: 0 0 25px #ff006a,
+              0 0 50px #ff006a,
+              0 0 75px rgba(255, 0, 106, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  transition: 0.4s ease;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.glow-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #ff006a,
+              0 0 70px #ff006a,
+              0 0 100px rgba(255, 0, 106, 0.8);
 }
 
-.profile-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 25px;
-    border: 3px solid #ff0066;
-    box-shadow: 0 0 30px #ff0066;
-    transition: 0.4s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px #ff0066;
-}
-
+/* Name */
 .hero h1 {
-    font-size: 70px;
-    font-weight: 900;
-    letter-spacing: 6px;
+  font-size: 3rem;
+  letter-spacing: 8px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.hero p {
-    margin-top: 15px;
-    font-weight: 300;
-    color: #ccc;
-    font-size: 18px;
+/* Subtitle */
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  max-width: 500px;
+  line-height: 1.6;
 }
 
-/* =======================
-   SERVERS SECTION
-======================= */
-
-.servers {
-    padding: 100px 10%;
-    text-align: center;
-}
-
+/* ========== SERVERS SECTION ========== */
 .servers h2 {
-    font-size: 50px;
-    margin-bottom: 60px;
-    font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  letter-spacing: 5px;
 }
 
+.server-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Server Cards */
 .server-card {
-    background: #111;
-    padding: 35px;
-    margin: 25px auto;
-    max-width: 450px;
-    border-radius: 12px;
-    transition: 0.4s ease;
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-.server-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+  background: #111;
+  border: 1px solid #222;
+  padding: 30px;
+  width: 280px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 106, 0.1);
 }
 
 .server-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px #ff0066;
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255, 0, 106, 0.5);
 }
 
 .server-card h3 {
-    margin-bottom: 15px;
-    font-size: 26px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
-.server-card a {
-    color: #ff0066;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.server-card p {
+  font-size: 1rem;
+  opacity: 0.7;
 }
 
-.server-card a:hover {
-    color: white;
-}
-
-/* =======================
-   CONTACT SECTION
-======================= */
-
-.contact {
-    padding: 100px 10%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
-}
-
-.contact.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.contact h2 {
-    font-size: 55px;
-    margin-bottom: 40px;
-    font-weight: 900;
-}
-
-.links a {
-    display: inline-block;
-    margin: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border: 1px solid #ff0066;
-    padding: 12px 25px;
-    border-radius: 30px;
-    transition: 0.3s ease;
-}
-
-.links a:hover {
-    background: #ff0066;
-    transform: scale(1.05);
-}
-
-/* =======================
-   FOOTER
-======================= */
-
+/* ========== FOOTER ========== */
 footer {
-    text-align: center;
-    padding: 25px;
-    background: #111;
-    font-size: 14px;
-    color: #aaa;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  background: #0a0a0a;
 }
 
-/* =======================
-   Responsive
-======================= */
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+  }
 
-@media(max-width: 768px) {
-    .hero h1 {
-        font-size: 45px;
-    }
+  .subtitle {
+    font-size: 1rem;
+  }
 
-    .servers h2,
-    .contact h2 {
-        font-size: 38px;
-    }
+  .servers h2 {
+    font-size: 2rem;
+  }
 
-    .profile-img {
-        width: 140px;
-        height: 140px;
-    }
+  .glow-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .server-card {
+    width: 90%;
+  }
 }
