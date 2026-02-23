@@ -2,48 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ColdWave | Portfolio</title>
+    <title>Server Network | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="dark-mode">
+<body>
 
-    <main class="container">
-        <div class="profile-wrapper">
-            <div class="avatar-glow"></div>
-            <img src="your-image.png" alt="Profile Avatar" class="avatar">
+    <header>
+        <div class="logo">Server Network</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#servers">Servers</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Building & Scaling Online Gaming Communities</h1>
+        <p>Owner of 3 growing servers with 440+ combined members.</p>
+        <a href="#servers" class="btn">View Servers</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I manage and grow online communities focused on engagement,
+            structured moderation, and high-performance gaming experiences.
+            My goal is to build organized, active, and scalable server networks.
+        </p>
+    </section>
+
+    <section id="servers" class="servers">
+        <h2>Our Servers</h2>
+
+        <div class="card">
+            <h3>Community Chat Hub</h3>
+            <p>178 Members</p>
+            <p>Active discussion-focused server with structured moderation.</p>
         </div>
 
-        <div class="content">
-            <p class="greeting">Hey, I'm</p>
-            <h1>ColdWave</h1>
-            <p class="subtitle">Portfolio Coming Soon</p>
+        <div class="card">
+            <h3>Minecraft SMP</h3>
+            <p>252 Members</p>
+            <p>Custom-managed survival server with organized gameplay systems.</p>
         </div>
 
-        <div class="social-links">
-            <a href="#"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+        <div class="card">
+            <h3>New Expansion Project</h3>
+            <p>12 Members</p>
+            <p>Newly launched experimental server focused on rapid growth.</p>
         </div>
-    </main>
 
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-sun" id="theme-icon"></i>
-    </button>
+    </section>
 
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.getElementById('theme-icon');
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        }
-    </script>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Join our community or collaborate with us.</p>
+        <button onclick="showMessage()">Connect Now</button>
+        <p id="message"></p>
+    </section>
+
+    <footer>
+        <p>© 2026 Server Network. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
