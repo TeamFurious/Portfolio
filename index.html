@@ -1,94 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Void Rider</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Void Rider | Community Architect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Animated Background -->
-<div class="bg-animation"></div>
+<div class="background"></div>
 
-<!-- HERO -->
+<header>
+    <nav>
+        <h2 class="logo">Void Rider</h2>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#servers">Servers</a></li>
+            <li><a href="#social">Socials</a></li>
+        </ul>
+    </nav>
+</header>
+
 <section class="hero">
-    <div class="glow-circle"></div>
+    <h1 class="fade-in">Entering The Void</h1>
+    <p class="fade-in delay">Building powerful digital communities.</p>
+</section>
 
-    <h1 class="glitch" data-text="VOID RIDER">VOID RIDER</h1>
-
-    <p class="subtitle">
-        Community Builder • Server Owner • Digital Visionary
+<section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>
+        I am Void Rider, founder of growing Discord communities.
+        I create engaging spaces with daily events, strong moderation,
+        and high quality management.
     </p>
+</section>
 
-    <div class="hero-buttons">
-        <a href="#servers" class="btn">View My Servers</a>
-        <a href="#connect" class="btn-outline">Connect</a>
+<section id="servers" class="section reveal">
+    <h2>My Servers</h2>
+
+    <div class="card">
+        <h3>Riwaayat</h3>
+        <p>Friendly members, daily events & giveaways.</p>
+        <a href="https://discord.gg/UbnuVPypAf" target="_blank">Join Server</a>
+    </div>
+
+    <div class="card">
+        <h3>ARC MC</h3>
+        <p>Active and engaging Minecraft community.</p>
+        <a href="https://discord.gg/UGq8uJ2Dtt" target="_blank">Join Server</a>
+    </div>
+
+    <div class="card">
+        <h3>Glaido</h3>
+        <p>Creative projects and structured management.</p>
+        <a href="https://discord.gg/Qc7Srj8xaw" target="_blank">Join Server</a>
     </div>
 </section>
 
-<!-- SERVERS -->
-<section class="servers" id="servers">
-    <h2>MY SERVERS</h2>
-
-    <div class="server-container">
-
-        <div class="server-card">
-            <h3>Riwaayat</h3>
-            <p>Chatting Community</p>
-            <span class="members">178 Members</span>
-            <a href="YOUR_DISCORD_LINK_1" target="_blank" class="card-btn">
-                <i class="fab fa-discord"></i> Join Server
-            </a>
-        </div>
-
-        <div class="server-card">
-            <h3>Arc MC</h3>
-            <p>Minecraft Server</p>
-            <span class="members">252 Members</span>
-            <a href="YOUR_DISCORD_LINK_2" target="_blank" class="card-btn">
-                <i class="fab fa-discord"></i> Join Server
-            </a>
-        </div>
-
-        <div class="server-card">
-            <h3>Glaido</h3>
-            <p>Growing Community</p>
-            <span class="members">12 Members</span>
-            <a href="YOUR_DISCORD_LINK_3" target="_blank" class="card-btn">
-                <i class="fab fa-discord"></i> Join Server
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONNECT -->
-<section class="connect" id="connect">
-    <h2>CONNECT WITH ME</h2>
-
-    <div class="social-icons">
-        <a href="https://instagram.com/YOURUSERNAME" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="https://youtube.com/YOURCHANNEL" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
-
-        <a href="mailto:youremail@example.com">
-            <i class="fas fa-envelope"></i>
-        </a>
+<section id="social" class="section reveal">
+    <h2>Connect With Me</h2>
+    <div class="social-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Discord</a>
     </div>
 </section>
 
 <footer>
-    © 2026 Void Rider
+    <p>© 2026 Void Rider. All rights reserved.</p>
 </footer>
 
 <script src="script.js"></script>
