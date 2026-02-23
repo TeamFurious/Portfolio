@@ -1,4 +1,3 @@
-/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     min-height: 100vh;
     background: linear-gradient(180deg, #3a0066 0%, #140021 60%, #000000 100%);
     color: white;
@@ -17,13 +16,11 @@ body {
     padding: 30px 20px;
 }
 
-/* ===== CONTAINER ===== */
 .hero {
     max-width: 700px;
     width: 100%;
 }
 
-/* ===== AVATAR ===== */
 .avatar {
     width: 150px;
     height: 150px;
@@ -39,7 +36,6 @@ body {
     object-fit: cover;
 }
 
-/* ===== NAME ===== */
 .glitch {
     font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: bold;
@@ -48,7 +44,6 @@ body {
     color: #00f0ff;
 }
 
-/* ===== SUBTITLE ===== */
 .subtitle {
     font-size: 0.85rem;
     letter-spacing: 3px;
@@ -56,7 +51,6 @@ body {
     color: #dddddd;
 }
 
-/* ===== QUOTE ===== */
 .quote {
     font-style: italic;
     color: #c084fc;
@@ -64,7 +58,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* ===== DESCRIPTION ===== */
 .description {
     font-size: 1rem;
     line-height: 1.6;
@@ -72,7 +65,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* ===== SOCIAL ICONS ===== */
 .social-icons {
     display: flex;
     justify-content: center;
