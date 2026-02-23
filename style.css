@@ -1,142 +1,164 @@
-/* ========== GLOBAL ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at center, #111 0%, #000 70%);
-  color: #fff;
+  color: white;
   overflow-x: hidden;
+  background: black;
 }
 
+/* ===== Animated Background ===== */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #000000, #111111, #1a001f, #000000);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Sections ===== */
 section {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-/* ========== HERO SECTION ========== */
-.hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Glowing Avatar */
+/* ===== Glow Circle ===== */
 .glow-circle {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  background: #000;
   border: 4px solid #ff006a;
-  box-shadow: 0 0 25px #ff006a,
-              0 0 50px #ff006a,
-              0 0 75px rgba(255, 0, 106, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 0 30px #ff006a,
+              0 0 60px #ff006a;
   margin-bottom: 40px;
-  transition: 0.4s ease;
 }
 
-.glow-circle:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px #ff006a,
-              0 0 70px #ff006a,
-              0 0 100px rgba(255, 0, 106, 0.8);
-}
-
-/* Name */
-.hero h1 {
+/* ===== Glitch Effect ===== */
+.glitch {
   font-size: 3rem;
-  letter-spacing: 8px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-weight: 800;
+  position: relative;
+  letter-spacing: 6px;
 }
 
-/* Subtitle */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  animation: glitchTop 1s infinite linear alternate-reverse;
+  color: #ff006a;
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitchBottom 1s infinite linear alternate-reverse;
+  color: #00ffff;
+  z-index: -2;
+}
+
+@keyframes glitchTop {
+  0% { transform: translate(2px,-2px); }
+  50% { transform: translate(-2px,2px); }
+  100% { transform: translate(2px,2px); }
+}
+
+@keyframes glitchBottom {
+  0% { transform: translate(-2px,2px); }
+  50% { transform: translate(2px,-2px); }
+  100% { transform: translate(-2px,-2px); }
+}
+
 .subtitle {
-  font-size: 1.2rem;
+  margin-top: 20px;
   opacity: 0.7;
-  max-width: 500px;
-  line-height: 1.6;
 }
 
-/* ========== SERVERS SECTION ========== */
+/* ===== Servers ===== */
 .servers h2 {
   font-size: 2.5rem;
-  margin-bottom: 60px;
-  letter-spacing: 5px;
+  margin-bottom: 40px;
 }
 
 .server-container {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Server Cards */
 .server-card {
   background: #111;
-  border: 1px solid #222;
   padding: 30px;
   width: 280px;
   border-radius: 15px;
-  transition: 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 0, 106, 0.1);
+  transition: 0.3s;
+  border: 1px solid #222;
+  box-shadow: 0 0 15px rgba(255, 0, 106, 0.2);
 }
 
 .server-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(255, 0, 106, 0.5);
+  box-shadow: 0 0 40px rgba(255, 0, 106, 0.6);
 }
 
-.server-card h3 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+.server-card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #00aaff;
+  text-decoration: none;
 }
 
-.server-card p {
-  font-size: 1rem;
-  opacity: 0.7;
+.server-card a:hover {
+  text-decoration: underline;
 }
 
-/* ========== FOOTER ========== */
+/* ===== Social ===== */
+.connect h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 40px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff006a;
+  transform: scale(1.2);
+}
+
+/* ===== Footer ===== */
 footer {
   padding: 20px;
   text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.6;
   background: #0a0a0a;
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-    letter-spacing: 4px;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .servers h2 {
-    font-size: 2rem;
-  }
-
-  .glow-circle {
-    width: 150px;
-    height: 150px;
-  }
-
-  .server-card {
-    width: 90%;
-  }
+  opacity: 0.6;
 }
