@@ -11,11 +11,10 @@ body {
     justify-content: center;
     align-items: center;
     background: #0d0d12;
-    overflow: hidden;
     color: white;
+    overflow: hidden;
 }
 
-/* Animated background */
 .background {
     position: fixed;
     width: 100%;
@@ -32,26 +31,14 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Glass Card */
 .card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
     padding: 40px;
-    width: 350px;
+    width: 360px;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 0 40px rgba(138, 43, 226, 0.4);
-    animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.profile-img {
-    margin-bottom: 20px;
 }
 
 .profile-img img {
@@ -59,34 +46,70 @@ body {
     border-radius: 50%;
     border: 3px solid #8a2be2;
     box-shadow: 0 0 25px #8a2be2;
+    margin-bottom: 20px;
 }
 
 h1 {
-    letter-spacing: 2px;
+    font-size: 28px;
     margin-bottom: 5px;
 }
 
-h3 {
+.status {
+    font-style: italic;
     color: #8a2be2;
-    font-weight: 400;
-    margin-bottom: 15px;
+    margin: 10px 0 15px 0;
+    font-size: 14px;
 }
 
 p {
     font-size: 14px;
     opacity: 0.8;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-/* Social icons */
 .icons a {
     color: white;
     font-size: 20px;
-    margin: 0 10px;
+    margin: 0 12px;
     transition: 0.3s;
 }
 
 .icons a:hover {
     color: #8a2be2;
     transform: scale(1.2);
+}
+
+/* Server Buttons */
+.server {
+    margin: 15px 0;
+}
+
+.server a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 18px;
+    background: #8a2be2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.server a:hover {
+    background: #a64dff;
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: white;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #8a2be2; }
+    25% { text-shadow: -2px -2px #ff00ff; }
+    50% { text-shadow: 2px -2px #00ffff; }
+    75% { text-shadow: -2px 2px #ff00ff; }
+    100% { text-shadow: 2px 2px #8a2be2; }
 }
