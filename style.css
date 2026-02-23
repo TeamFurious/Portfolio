@@ -3,17 +3,21 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #1a002a, #000);
+    background: radial-gradient(circle at top, #2b0050, #000);
+    min-height: 100dvh;
+}
+
+/* ================= PROFILE PAGE ================= */
+
+.profile-page {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
 }
 
-/* ================= PROFILE CARD ================= */
-
 .card {
-    background: rgba(20, 0, 40, 0.85);
+    background: rgba(25, 0, 45, 0.9);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -21,6 +25,7 @@ body {
     max-width: 380px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 40px rgba(140, 0, 255, 0.4);
+    color: white;
 }
 
 .avatar img {
@@ -32,7 +37,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ================= GLITCH EFFECT ================= */
+/* ================= GLITCH ================= */
 
 .glitch {
     position: relative;
@@ -40,7 +45,6 @@ body {
     font-weight: bold;
     color: white;
     letter-spacing: 3px;
-    animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 
 .glitch::before,
@@ -48,39 +52,29 @@ body {
     content: attr(data-text);
     position: absolute;
     left: 0;
-    width: 100%;
-    overflow: hidden;
 }
 
 .glitch::before {
     color: #ff00ff;
-    animation: glitch-top 1s infinite linear alternate-reverse;
+    animation: glitchTop 1s infinite linear alternate-reverse;
 }
 
 .glitch::after {
     color: #00ffff;
-    animation: glitch-bottom 1s infinite linear alternate-reverse;
+    animation: glitchBottom 1s infinite linear alternate-reverse;
 }
 
-@keyframes glitch-top {
-    0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
-    50% { clip-path: inset(0 0 60% 0); transform: translate(2px, 2px); }
-    100% { clip-path: inset(0 0 70% 0); transform: translate(-1px, 1px); }
+@keyframes glitchTop {
+    0% { transform: translate(-2px, -2px); }
+    100% { transform: translate(2px, 2px); }
 }
 
-@keyframes glitch-bottom {
-    0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
-    50% { clip-path: inset(60% 0 0 0); transform: translate(-2px, -2px); }
-    100% { clip-path: inset(70% 0 0 0); transform: translate(1px, -1px); }
+@keyframes glitchBottom {
+    0% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
 }
 
-@keyframes glitch-skew {
-    0% { transform: skew(0deg); }
-    50% { transform: skew(3deg); }
-    100% { transform: skew(-3deg); }
-}
-
-/* ================= ROLE LINE ================= */
+/* ================= ROLE ================= */
 
 .role {
     font-size: 13px;
@@ -90,15 +84,11 @@ body {
     margin-bottom: 15px;
 }
 
-/* ================= STATUS ================= */
-
 .status {
     color: #a020f0;
     font-style: italic;
     margin-bottom: 15px;
 }
-
-/* ================= DESCRIPTION ================= */
 
 .description {
     font-size: 14px;
@@ -106,14 +96,12 @@ body {
     margin-bottom: 25px;
 }
 
-/* ================= ICONS ================= */
-
 .icons a {
     font-size: 22px;
     margin: 0 12px;
     color: white;
     transition: 0.3s;
-    text-decoration: none; /* removes any underline */
+    text-decoration: none;
 }
 
 .icons a:hover {
@@ -123,30 +111,28 @@ body {
 
 /* ================= DISCORD PAGE ================= */
 
-.discord-container {
-    min-height: 100dvh;
+.discord-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    min-height: 100dvh;
 }
 
 .discord-card {
-    width: 95%;
+    width: 92%;
     max-width: 420px;
-    background: linear-gradient(145deg, #1a002a, #0d0018);
+    background: linear-gradient(145deg, #1f0038, #12001f);
     padding: 35px;
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 0 50px rgba(160, 32, 240, 0.6);
-    backdrop-filter: blur(8px);
+    box-shadow: 0 0 50px rgba(114, 137, 218, 0.6);
+    color: white;   /* FORCE WHITE TEXT */
 }
 
 .discord-card h1 {
-    color: white;
+    font-size: 24px;
     margin-bottom: 25px;
-    font-size: 22px;
-    letter-spacing: 2px;
+    color: #ffffff;  /* FORCE WHITE */
 }
 
 .server {
@@ -154,24 +140,25 @@ body {
 }
 
 .server h3 {
-    color: #e0c3ff;
-    margin-bottom: 10px;
+    color: #cbb6ff;  /* Visible light purple */
+    margin-bottom: 12px;
     font-weight: 500;
 }
+
+/* Official Discord Blue Button */
 
 button {
     padding: 10px 25px;
     border-radius: 25px;
     border: none;
-    background: linear-gradient(90deg, #a020f0, #c770ff);
+    background: #5865F2;  /* Discord blue */
     color: white;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease;
-    box-shadow: 0 0 15px rgba(160, 32, 240, 0.6);
 }
 
 button:hover {
+    background: #4752c4;
     transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(199, 112, 255, 0.9);
 }
