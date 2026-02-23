@@ -1,50 +1,21 @@
-// Smooth Scroll Reveal Animation
-const revealElements = document.querySelectorAll(".server-card, .contact, .servers");
+// Smooth scroll animation fade-in
+const cards = document.querySelectorAll('.server-card');
 
-const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
 
-    revealElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
 
-        if (elementTop < triggerBottom) {
-            el.classList.add("visible");
+        if(top < trigger) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
         }
     });
-};
+});
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-
-// Typing Effect
-const text = "Community Builder • Server Owner • Digital Visionary";
-const typingElement = document.querySelector(".hero p");
-
-let index = 0;
-
-function typeEffect() {
-    if (index < text.length) {
-        typingElement.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 50);
-    }
-}
-
-typingElement.innerHTML = "";
-typeEffect();
-
-
-// Floating Particle Background
-const bg = document.querySelector(".bg-animation");
-
-for (let i = 0; i < 30; i++) {
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
-
-    particle.style.left = Math.random() * 100 + "vw";
-    particle.style.animationDuration = (Math.random() * 5 + 5) + "s";
-    particle.style.opacity = Math.random();
-
-    bg.appendChild(particle);
-}
+cards.forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "all 0.6s ease";
+});
